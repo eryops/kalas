@@ -1,0 +1,50 @@
+@keyframes balloon1 {
+  0%,100%{ transform:translateY(0) rotate(-6deg);}
+  50%{ transform:translateY(-20px) rotate(8deg); }
+}
+
+@keyframes balloon2 {
+  0%,100%{ transform:translateY(0) rotate(6deg);}
+  50%{ transform:translateY(-30px) rotate(-8deg); }
+}
+
+@keyframes balloon3 {
+ 0%,100%{ transform:translate(0, -10px) rotate(6eg);}
+  50%{ transform:translate(-20px, 30px) rotate(-8deg); }
+}
+
+@keyframes balloon4 {
+  0%,100%{ transform:translate(10px, -10px) rotate(-8eg);}
+  50%{ transform:translate(-15px, 10px) rotate(10deg); }
+}
+
+//media
+@xs: ~"all and (min-width: 480px)";
+@sm: ~"all and (min-width: 800px)";
+
+@color-font-default: #222;
+@color-primary: #ffaaff;
+
+//Ballons
+@height-ballon-default: 10rem;
+@width-ballon-default: 7rem;
+@font-size-ballon-triangle-default: 1.8rem;
+@possition-left-triangle-default: 2.5rem;
+@possition-bottom-triangle-default: -1.8rem;
+
+@color-red-baloon: rgba(255, 0, 0, 0.8);
+@color-yellow-baloon: rgba(255, 252, 82, 0.8);
+@color-pink-baloon: rgba(255, 82, 131, 0.8);
+@color-blue-baloon: rgba(0, 0, 255, 0.8);
+@color-purple-baloon: rgba(182, 37, 254, 0.8);
+@color-green-baloon: rgba(38, 244, 1, 0.8);
+@color-light-blue-baloon: rgba(1, 215, 244, 0.8);
+
+//Mixins
+.inner-box-shadow(@h: 0.85rem, @w: 0.35rem, @blure: 0.5rem, @spread: 0,  @color: darken(@color-red-baloon, 15%)) {
+  box-shadow: inset @h @w @blure @spread @color;
+}
+
+.ballon-annimation(@ballon: balloon1) {
+  animation: @ballon 3s ease-in-out infinite;
+}

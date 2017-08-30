@@ -1,0 +1,279 @@
+//@import "../node_modules/font-awesome/less/font-awesome.less";
+@import "variables.less";
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+  color: @color-font-default;
+  font-family: "Indie Flower", sans-serif;
+}
+
+::selection {
+  background: @color-primary;
+  color: #fff;
+}
+.wrapper {
+  height: 100%;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+  .back-home {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: left;
+    padding: 1rem 0 0 1rem;
+    a {
+      display: block;
+      padding: 0;
+      color: @color-primary;
+    }
+  }
+  h1 {
+    &.sub-page {
+      margin-top: 0rem;
+    }
+    position: relative;
+    z-index: 5;
+    color: pink;
+    font-size: 10vw;
+  }
+  h2, h3 {
+    position: relative;
+    color: @color-primary;
+    z-index: 5;
+    font-size: 7vw;
+  }
+  em {
+    position: relative;
+    z-index: 5;
+  }
+  img {
+    position: relative;
+    max-width: 90%;
+    z-index: 0;
+  }
+  figure {
+    box-shadow: 0 0 10px;
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+    margin: 0 10px;
+    figcaption {
+      font-size: 2.5rem;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  p {
+    position: relative;
+    z-index: 5;
+    padding-bottom: @height-ballon-default*1.3;
+  }
+  a {
+    position: relative;
+    text-decoration: none;
+    color: @color-font-default;
+    padding: 1rem;
+    transition: all 1s ease;
+    &:hover {
+      color: @color-primary;
+    }
+  }
+  ul {
+    padding: 0;
+    position: relative;
+    z-index: 5;
+    &.last {
+      padding-bottom: @height-ballon-default*1.3;
+    }
+    li {
+      &:first-child {
+        border-top: 1px solid @color-primary;
+      }
+      font-size: 1.6rem;
+      line-height: 2.2;
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid @color-primary;
+      position: relative;
+      text-align: left;
+      min-height: 5rem;
+      width: 100%;
+      list-style-type: none;
+      a, span {
+        position: absolute;
+        width: 96%;
+        padding: 2%;
+        vertical-align: middle;
+      }
+    }
+  }
+  .ballons {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    .ballon {
+      position: absolute;
+      bottom: 0;
+      height: @height-ballon-default;
+      width: @width-ballon-default;
+      border-radius: 80%;
+      &:before {
+        position: absolute;
+        bottom: @possition-bottom-triangle-default;
+        left: @possition-left-triangle-default;
+        content: "▲";
+        font-size: @font-size-ballon-triangle-default;
+      }
+      &.red {
+        background-color: @color-red-baloon;
+        .inner-box-shadow();
+        .ballon-annimation();
+        &:before {
+          color: @color-red-baloon;
+        }
+      }
+      &.yellow {
+        right: 0;
+        background-color: @color-yellow-baloon;
+        .inner-box-shadow(@color: darken(@color-yellow-baloon, 15%));
+        .ballon-annimation(balloon3);
+        &:before {
+          color: @color-yellow-baloon;
+        }
+      }
+      &.pink {
+        right: 30%;
+        background-color: @color-pink-baloon;
+        .inner-box-shadow(@color: darken(@color-pink-baloon, 15%));
+        .ballon-annimation(balloon2);
+        &:before {
+          color: @color-pink-baloon;
+        }
+      }
+      &.blue {
+        left: 30%;
+        background-color: @color-blue-baloon;
+        .inner-box-shadow(@color: darken(@color-blue-baloon, 15%));
+        .ballon-annimation(balloon4);
+        &:before {
+          color: @color-blue-baloon;
+        }
+      }
+      &.purple {
+        left: 15%;
+        background-color: @color-purple-baloon;
+        .inner-box-shadow(@color: darken(@color-purple-baloon, 15%));
+        .ballon-annimation(balloon3);
+        &:before {
+          color: @color-purple-baloon;
+        }
+      }
+      &.green {
+        left: 40%;
+        background-color: @color-green-baloon;
+        .inner-box-shadow(@color: darken(@color-green-baloon, 15%));
+        .ballon-annimation(balloon1);
+        &:before {
+          color: @color-green-baloon;
+        }
+      }
+      &.light-blue {
+        right: 15%;
+        background-color: @color-light-blue-baloon;
+        .inner-box-shadow(@color: darken(@color-light-blue-baloon, 15%));
+        .ballon-annimation(balloon1);
+        &:before {
+          color: @color-light-blue-baloon;
+        }
+      }
+    }
+  }
+}
+@media @xs {
+  .wrapper {
+    margin: 0 auto;
+    max-width: 80rem;
+    figure {
+      padding: 3rem;
+      padding-bottom: 1rem;
+    }
+    p {
+      padding-bottom: @height-ballon-default*2.2;
+      font-size: 2.2rem;
+    }
+    h1 {
+      &.sub-page {
+        margin-top: 2rem;
+      }
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2.5rem;
+    }
+    ul {
+      &.last {
+        padding-bottom: @height-ballon-default*2.2;
+      }
+      max-width: 50rem;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      li {
+        font-size: 1.8rem;
+        line-height: 1.75;
+      }
+    }
+    .ballons {
+      max-width: 80rem;
+      .ballon {
+        height: @height-ballon-default*1.9;
+        width: @width-ballon-default*1.9;
+        .inner-box-shadow(1.7rem, 0.7rem, 1rem);
+
+        &:before {
+          position: absolute;
+          bottom: @possition-bottom-triangle-default*1.9;
+          left: @possition-left-triangle-default*1.9;
+          font-size: @font-size-ballon-triangle-default*1.9;
+        }
+
+        &.pink {
+          .inner-box-shadow(@color: darken(@color-pink-baloon, 15%));
+        }
+        &.blue {
+          .inner-box-shadow(@color: darken(@color-blue-baloon, 15%));
+        }
+        &.yellow {
+          .inner-box-shadow(@color: darken(@color-yellow-baloon, 15%));
+        }
+        &.purple {
+          .inner-box-shadow(@color: darken(@color-purple-baloon, 15%));
+        }
+        &.green {
+          .inner-box-shadow(@color: darken(@color-green-baloon, 15%));
+        }
+        &.light-blue {
+          .inner-box-shadow(@color: darken(@color-light-blue-baloon, 15%));
+        }
+      }
+    }
+  }
+}
+@media @sm {
+  .wrapper {
+    h1 {
+      font-size: 8rem;
+    }
+    h2 {
+      font-size: 4rem;
+    }
+  }
+}
