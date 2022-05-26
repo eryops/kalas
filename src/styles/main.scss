@@ -38,6 +38,19 @@ body {
       font-size: 8rem;
     }
   }
+  h2 {
+    color: #4076c3;
+    @media ($xs) {
+      font-size: 6vw;
+    }
+    @media ($sm) {
+      font-size: 5rem;
+    }
+  }
+  p {
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
   em {
     z-index: 5;
   }
@@ -57,7 +70,7 @@ body {
       max-width: 100%;
     }
   }
-  p {
+  .information-container {
     padding-bottom: $height-balloon-default * 1.3;
     @media ($xs) {
       padding-bottom: $height-balloon-default * 2.2;
