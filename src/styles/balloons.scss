@@ -1,0 +1,138 @@
+.balloons {
+  width: 100%;
+  max-width: 100rem;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  .balloon {
+    position: absolute;
+    bottom: 0;
+    height: $height-balloon-default;
+    width: $width-balloon-default;
+    border-radius: 80%;
+
+    &:before {
+      position: absolute;
+      bottom: $position-bottom-triangle-default;
+      left: $position-left-triangle-default;
+      content: "▲";
+      font-size: $font-size-balloon-triangle-default;
+    }
+    &.red {
+      background-color: $color-red-balloon;
+      @include inner-box-shadow();
+      @include balloon-animation();
+      &:before {
+        color: $color-red-balloon;
+      }
+      &:hover {
+        animation: hoverEffect 5s 1;
+      }
+    }
+    &.yellow {
+      right: 0;
+      background-color: $color-yellow-balloon;
+      @include inner-box-shadow($color: darken($color-yellow-balloon, 15%));
+      @include balloon-animation(balloon3);
+      &:before {
+        color: $color-yellow-balloon;
+      }
+      &:hover {
+        animation: hoverEffect 5s 1;
+      }
+    }
+    &.pink {
+      right: 30%;
+      background-color: $color-pink-balloon;
+      @include inner-box-shadow($color: darken($color-pink-balloon, 15%));
+      @include balloon-animation(balloon2);
+      &:before {
+        color: $color-pink-balloon;
+      }
+      &:hover {
+        animation: hoverEffect 5s 1;
+      }
+    }
+    &.blue {
+      left: 30%;
+      background-color: $color-blue-balloon;
+      @include inner-box-shadow($color: darken($color-blue-balloon, 15%));
+      @include balloon-animation(balloon4);
+      &:before {
+        color: $color-blue-balloon;
+      }
+      &:hover {
+        animation: hoverEffect 5s 1;
+      }
+    }
+    &.purple {
+      left: 15%;
+      background-color: $color-purple-balloon;
+      @include inner-box-shadow($color: darken($color-purple-balloon, 15%));
+      @include balloon-animation(balloon3);
+      &:before {
+        color: $color-purple-balloon;
+      }
+      &:hover {
+        animation: hoverEffect 5s 1;
+      }
+    }
+    &.green {
+      left: 40%;
+      background-color: $color-green-balloon;
+      @include inner-box-shadow($color: darken($color-green-balloon, 15%));
+      @include balloon-animation(balloon1);
+      &:before {
+        color: $color-green-balloon;
+      }
+      &:hover {
+        animation: hoverEffect 5s 1;
+      }
+    }
+    &.light-blue {
+      right: 15%;
+      background-color: $color-light-blue-balloon;
+      @include inner-box-shadow($color: darken($color-light-blue-balloon, 15%));
+      @include balloon-animation(balloon1);
+      &:before {
+        color: $color-light-blue-balloon;
+      }
+      &:hover {
+        animation: hoverEffect 5s 1;
+      }
+    }
+    @media ($xs) {
+      height: $height-balloon-default * 1.9;
+      width: $width-balloon-default * 1.9;
+      @include inner-box-shadow(1.7rem, 0.7rem, 1rem);
+
+      &:before {
+        position: absolute;
+        bottom: $position-bottom-triangle-default * 1.9;
+        left: $position-left-triangle-default * 1.9;
+        font-size: $font-size-balloon-triangle-default * 1.9;
+      }
+
+      &.pink {
+        @include inner-box-shadow($color: darken($color-pink-balloon, 15%));
+      }
+      &.blue {
+        @include inner-box-shadow($color: darken($color-blue-balloon, 15%));
+      }
+      &.yellow {
+        @include inner-box-shadow($color: darken($color-yellow-balloon, 15%));
+      }
+      &.purple {
+        @include inner-box-shadow($color: darken($color-purple-balloon, 15%));
+      }
+      &.green {
+        @include inner-box-shadow($color: darken($color-green-balloon, 15%));
+      }
+      &.light-blue {
+        @include inner-box-shadow(
+          $color: darken($color-light-blue-balloon, 15%)
+        );
+      }
+    }
+  }
+}

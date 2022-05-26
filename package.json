@@ -1,18 +1,28 @@
 {
-  "name": "kalas-inbjudan",
+  "name": "kalas",
   "version": "1.0.0",
-  "dependencies": {
-    "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.0.4",
-    "gulp-concat": "^2.6.1",
-    "gulp-less": "^3.3.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sourcemaps": "^2.5.1",
-    "gulp-uglify": "^2.1.2",
-    "gulp-util": "^3.0.8",
-    "jquery": "^3.2.1",
-    "less-plugin-autoprefix": "^1.5.1",
-    "node": "^0.0.0"
+  "description": "Elliott och Dantes kalasinbjudan",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch src/styles/main.scss:src/public/css/main.css "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eryops/kalas.git"
+  },
+  "keywords": [
+    "Kalas",
+    "Elliott",
+    "Dante"
+  ],
+  "author": "Johanna Liljecrantz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eryops/kalas/issues"
+  },
+  "homepage": "https://github.com/eryops/kalas#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1"
   }
 }

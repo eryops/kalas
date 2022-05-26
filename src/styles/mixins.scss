@@ -1,0 +1,13 @@
+@mixin inner-box-shadow(
+  $h: 0.85rem,
+  $w: 0.35rem,
+  $blur: 0.5rem,
+  $spread: 0,
+  $color: darken($color-red-balloon, 15%)
+) {
+  box-shadow: inset $h $w $blur $spread $color;
+}
+
+@mixin balloon-animation($balloon: balloon1) {
+  animation: $balloon 3s ease-in-out infinite;
+}
